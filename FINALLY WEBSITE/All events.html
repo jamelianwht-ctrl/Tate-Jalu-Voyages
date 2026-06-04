@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.TateJaluVoyages.com</title>
+    <link rel="stylesheet" href="unified_style.css">
+</head>
+<body>
+
+   <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+
+<br>
+    <div class="container">
+        <header>
+            <div class="title">
+                <a href="#" id="homeLink">All Events</a>
+            </div>
+        </header>
+        <h2 class="page-subtitle">One spectacular lineup, hosted across a selection of premier destinations. Explore unique experiences tailored to each handpicked location and find your next unforgettable moment.</h2>
+
+        
+        <div id="contentTab"></div>
+    </div>
+
+    
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+     
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                city: "Johannesburg",
+                name: "The Johannesburg Zoo",
+                location: "Johannesburg Zoo, CNR Jan Smuts Ave & Upper Park Dr, Parkview, Johannesburg",
+                price: 50,
+                description: "Explore the wonders of the Johannesburg Zoo, a family-friendly destination home to a wide variety of wildlife from around the world. Event time: 2026-07-15 10:00. Enjoy scenic walkways, educational exhibits, and exciting animal encounters in a fun and relaxing environment perfect for visitors of all ages.",
+                image: "images/jo1.png"
+            },
+            {
+                id: 2,
+                city: "Johannesburg",
+                name: "Sun Eagle Adventures - Maropeng",
+                location: "Sun Eagle Adventures, Maropeng",
+                price: 50,
+                description: "Take on the thrill of a 4-wheel adventure trail where rugged terrain, muddy tracks, and scenic landscapes combine for an adrenaline-filled outdoor experience. Event time: 2026-07-16 11:30. Perfect for adventure seekers, this exciting ride offers powerful off-road action, breathtaking views, and unforgettable moments across challenging trails.",
+                image: "images/jo2.png"
+            },
+            {
+                id: 3,
+                city: "Johannesburg",
+                name: "Wits Sterkfontein Caves",
+                location: "Sterkfonten Caves, kromdraai Rd, Johannesburg",
+                price: 100,
+                description: "Discover the hidden beauty of a cave tour as you journey through fascinating underground passages filled with stunning rock formations and natural wonders. Event time: 2026-07-17 14:00. Guided by experienced experts, this adventure offers a unique blend of exploration, history, and breathtaking scenery for an unforgettable experience beneath the surface.",
+                image: "images/jo3.png"
+            },
+            {
+                id: 4,
+                city: "Johannesburg",
+                name: "Kingsmead Book Fair 2026",
+                location: "Kingsmead College Campus, Johannesburg",
+                price: 90,
+                description: "Step into a world of stories and creativity at a lively bookstore festival celebrating books, authors, and reading culture. Event time: 2026-07-18 09:45. Enjoy book launches, live readings, interactive activities, and a welcoming atmosphere where book lovers of all ages can discover new favorites and connect through the joy of literature.",
+                image: "images/jo4.png"
+            },
+            {
+                id: 5,
+                city: "Durban",
+                name: "RUN FOR CHARITY 2ND Ostomy Charity fun walk",
+                location: "Ushaka Marine World, 1 King Shaka Ave, Durban",
+                price: 200,
+                description: "Join us for the RUN FOR CHARITY to support Foundation on 2026-07-05 at 08:00. Whether you run, jog or walk, every step you take will directly fund their mission. Lace up your shoes, bring your friends, and be part of something bigger.",
+                image: "images/dbn1.png"
+            },
+            {
+                id: 6,
+                city: "Durban",
+                name: "DURBAN CITY FC VS AmaZulu FC",
+                location: "Chatsworth Stadium, 97 Camillus Avenue Chatsworth, Durban",
+                price: 50,
+                description: "Experience the excitement of a local soccer game event on 2026-07-07 at 18:30. Cheer alongside passionate fans, enjoy fast-paced action, and witness local talent compete in an energetic atmosphere filled with teamwork, entertainment, and unforgettable moments for all ages.",
+                image: "images/dbn2.png"
+            },
+            {
+                id: 7,
+                city: "Durban",
+                name: "Sip & Paint by MODERNISM - Fortunes Cafe Morningside",
+                location: "Fortunes Cafe Morningside, 1st Floor, 1 Morningside Rd, Durban",
+                price: 360,
+                description: "Unwind and get creative at a fun Sip and Paint event on 2026-07-09 at 17:00 where art meets relaxation. Enjoy your favorite drinks while following a guided painting session in a lively, social atmosphere perfect for friends, date nights, or anyone looking to express their creativity and have a memorable evening.",
+                image: "images/dbn3.png"
+            },
+            {
+                id: 8,
+                city: "Durban",
+                name: "Syakuzwa Gqom Festival",
+                location: "Durban Exhibition Centre, Walnut Road, Durban Central, Durban.",
+                price: 250,
+                description: "Feel the energy of a vibrant Gqom Music Festival on 2026-10-11 at 20:30 where powerful beats, electrifying performances, and nonstop dancing create an unforgettable experience. Celebrate the sound and culture of Durban's iconic music scene with top DJs, live entertainment, and an atmosphere full of rhythm, excitement, and pure nightlife energy.",
+                image: "images/dbn4.png"
+            },
+            {
+                id: 9,
+                city: "Cape Town",
+                name: "Sky-Hi Ride",
+                location: "Hotel Sky, 9 Lower Long Street, Cape Town",
+                price: 150,
+                description: "Take your adventure to new heights with the Sky-Hi Ride at Hotel Sky on 2026-11-02 at 09:30. This thrilling rooftop attraction launches riders high above the city skyline, delivering breathtaking panoramic views and an unforgettable adrenaline rush.",
+                image: "images/cape1.png"
+            },
+            {
+                id: 10,
+                city: "Cape Town",
+                name: "Iziko Planetarium and Digital Dome",
+                location: "Iziko South African Museum, 25 Queen Victoria St, Cape Town",
+                price: 250,
+                description: "Step into a fully immersive digital dome experience on 2026-07-03 at 14:00 where light, sound, and motion surround you in every direction. High-resolution visuals are projected across a massive curved dome, transforming the space into a living world of music, storytelling, and interactive art.",
+                image: "images/cape2.png"
+            },
+            {
+                id: 11,
+                city: "Cape Town",
+                name: "Sport Helicopters",
+                location: "V&A Waterfront, 36 E Pier Rd, Cape Town",
+                price: 2000,
+                description: "Take to the skies on an unforgettable helicopter ride experience on 2026-07-04 at 16:45, where breathtaking aerial views and the thrill of flight come together. Glide above stunning landscapes, city skylines, or scenic coastlines while enjoying a smooth and exhilarating journey from a whole new perspective.",
+                image: "images/cape3.png"
+            },
+            {
+                id: 12,
+                city: "Cape Town",
+                name: "KILLARNEY RALLYCROSS UNLEASHES PURE MAYHEMI",
+                location: "Killarney International Raceway, 6 Potsdam Road, Table View, Cape Town",
+                price: 180,
+                description: "Experience the adrenaline of Rallycross on 2026-07-05 at 19:00, where high-performance cars battle it out on a mix of dirt and asphalt tracks in fast-paced, wheel-to-wheel action. Expect roaring engines, dramatic drifts, flying gravel, and intense racing as drivers push their skills to the limit.",
+                image: "images/cape4.png"
+            }
+        ];
+        window.products = products;
+    </script>
+    <script src="unified_script.js"></script>
+    <br>
+    <br>
+    <footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

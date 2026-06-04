@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOUNGE.SHOP - Responsive E-Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="unified_style.css">
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+
+    <!-- Integrated Master Layout Wrapper -->
+    <div class="container">
+        <header>
+            <div class="title">
+                <a href="#" id="homeLink">Popular Events</a>
+            </div>
+        </header>
+        <h2 class="page-subtitle">Capetown Events</h2>
+
+        <!-- Dynamic Target Core View Mount -->
+        <div id="contentTab"></div>
+    </div>
+
+    <!-- Hidden Persistent Interactive Checkout Sidebar Frame -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+    <script>
+        // Centralized Product Catalog Storage Registry
+        const products = [
+            {
+                id: 9,
+                name: "Sky-Hi Ride",
+                location: "Hotel Sky, 9 Lower Long Street,Cape Town",
+                price: 150,
+                description: "Take your adventure to new heights with the Sky-Hi Ride at Hotel Sky on 2026-11-02 at 09:30. This thrilling rooftop attraction launches riders high above the city skyline, delivering breathtaking panoramic views and an unforgettable adrenaline rush.",
+                image: "images/cape1.png"
+            },
+            {
+                id: 10,
+                name: "Iziko Planetarium and Digital Dome",
+                location: "Iziko South African Museum, 25 Queen Victoria St, Cape Town",
+                price: 250,
+                description: "Step into a fully immersive digital dome experience on 2026-07-03 at 14:00 where light, sound, and motion surround you in every direction. High-resolution visuals are projected across a massive curved dome, transforming the space into a living world of music, storytelling, and interactive art.",
+                image: "images/cape2.png"
+            },
+            {
+                id: 11,
+                name: "Sport Helicopters",
+                location: "V&A Waterfront, 36 E Pier Rd, Cape Town",
+                price: 2000,
+                description: "Take to the skies on an unforgettable helicopter ride experience on 2026-07-04 at 16:45, where breathtaking aerial views and the thrill of flight come together. Glide above stunning landscapes, city skylines, or scenic coastlines while enjoying a smooth and exhilarating journey from a whole new perspective.",
+                image: "images/cape3.png"
+            },
+            {
+                id: 12,
+                name: "KILLARNEY RALLYCROSS UNLEASHES PURE MAYHEMI",
+                location: "Killarney International Raceway, 6 Potsdam Road, Table View, Cape Town",
+                price: 180,
+                description: "Experience the adrenaline of Rallycross on 2026-07-05 at 19:00, where high-performance cars battle it out on a mix of dirt and asphalt tracks in fast-paced, wheel-to-wheel action. Expect roaring engines, dramatic drifts, flying gravel, and intense racing as drivers push their skills to the limit.",
+                image: "images/cape4.png"
+            }
+        ];
+        window.products = products;
+    </script>
+    <script src="unified_script.js"></script>
+    <footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

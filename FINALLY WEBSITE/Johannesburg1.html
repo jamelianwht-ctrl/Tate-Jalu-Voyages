@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Johannesburg — Airbnb</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="unified_style.css"/>
+</head>
+<body>
+
+   <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Johannesburg</h1>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="f-btn active" data-filter="all" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    All
+  </button>
+  <button class="f-btn" data-filter="beachfront" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M2 20h20M3 17s1-6 9-6 9 6 9 6"/><circle cx="12" cy="7" r="3"/></svg>
+    Beachfront
+  </button>
+  <button class="f-btn" data-filter="pools" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M2 12h20M2 17c2-2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M6 7l3-3 3 3"/></svg>
+    Pools
+  </button>
+  <button class="f-btn" data-filter="luxury" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Luxury
+  </button>
+  <button class="f-btn" data-filter="apartments" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+    Apartments
+  </button>
+ 
+  
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap">
+  <div class="cards-grid" id="cards-grid"></div>
+</div>
+
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+
+<script>
+const listings = [
+  {
+    id: 5,
+    type: "Apartment in Sandton",
+    name: "Entire rental unit in Sandton",
+    detail: "1 bedroom · 1 queen bed · 1 bath",
+    dates: "May 24 – 29",
+    priceVal: 4150,
+    nights: 2,
+    rating: "4.98",
+    reviews: 43,
+    badge: true,
+    tags: ["pools","luxury"],
+    url: "https://www.airbnb.co.za/rooms/1478989448046114565?search_mode=regular_search&adults=1&check_in=2026-05-23&check_out=2026-05-28&children=0&infants=0&pets=0&source_impression_id=p3_1779371345_P3F0_rCubTc8XaCj&previous_page_section_name=1000&federated_search_id=082abcf9-6f9e-449b-9754-bd9f4f6bf294",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ3ODk4OTQ0ODA0NjExNDU2NQ==/original/e7def023-a8a7-4751-ae54-f8d8038c8aec.jpeg?im_w=960",
+      "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=700&q=80",
+      "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?w=700&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700&q=80"
+    ]
+  },
+  {
+    id: 6,
+    type: "Apartment in Sandton",
+    name: "Entire rental unit in Sandton",
+    detail: "2 bedroom · 2 bed · 2 bath",
+    dates: "Jun 1 – 6",
+    priceVal: 4011,
+    nights: 2,
+    rating: "4.9",
+    reviews: 10,
+    badge: true,
+    tags: ["apartments","luxury"],
+    url: "https://www.airbnb.co.za/rooms/1644793949533558991?search_mode=regular_search&adults=1&check_in=2026-06-02&check_out=2026-06-04&photo_id=2557865553&source_impression_id=p3_1779371345_P34f8Ys6WaeJz6To&previous_page_section_name=1000&federated_search_id=082abcf9-6f9e-449b-9754-bd9f4f6bf294&guests=1&modal=PHOTO_TOUR_SCROLLABLE",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1644793949533558991/original/8cf1f648-fcc4-40fb-90ac-d6bcd974a162.jpeg?im_w=1200",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80"
+    ]
+  },
+  {
+    id: 7,
+    type: "Apartment in Midrand",
+    name: "Entire rental unit in Midrand",
+    detail: "2 bedrooms · 2 beds · 2 bath",
+    dates: "May 24 – 29",
+    priceVal: 1931,
+    nights: 2,
+    rating: "4.93",
+    reviews: 0,
+    badge: true,
+    tags: ["apartments","luxury"],
+    url: "https://www.airbnb.co.za/rooms/1663881222892676877?search_mode=regular_search&adults=1&check_in=2026-06-19&check_out=2026-06-21&children=0&infants=0&pets=0&source_impression_id=p3_1779403882_P3lVLiankV4KNVvW&previous_page_section_name=1000&federated_search_id=8b1ef89b-b326-4381-88d7-bad84fae1957",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1663881222892676877/original/c146238c-5214-4439-bb8d-ec4362a841ee.jpeg?im_w=720",
+      "https://images.unsplash.com/photo-1506974210756-8e1b8985d348?w=700&q=80",
+      "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=700&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80",
+      "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=700&q=80"
+    ]
+  },
+  {
+    id: 8,
+    type: "Apartment in Sandton",
+    name: "Sandton Skye Super Luxury Apartment",
+    detail: "1 bedrooms · 1 beds · 1 baths",
+    dates: "Jun 5 – 10",
+    priceVal: 2732,
+    nights: 2,
+    rating: "5.0",
+    reviews: 10,
+    badge: true,
+    tags: ["apartments","luxury","pools"],
+    url: "https://www.airbnb.co.za/rooms/1643627082460260396?search_mode=regular_search&adults=1&check_in=2026-06-05&check_out=2026-06-07&children=0&infants=0&pets=0&source_impression_id=p3_1779404263_P3cB14niO5Zx1Vl2&previous_page_section_name=1000&federated_search_id=3ef4f034-e384-4213-9554-444e629c73a3",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1643627082460260396/original/434e4e43-3bab-445b-8113-8d309afcb9f9.jpeg?im_w=1200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
+      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=700&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700&q=80"
+    ]
+  }
+];
+window.listings = listings;
+</script>
+<script src="unified_script.js"></script>
+<footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

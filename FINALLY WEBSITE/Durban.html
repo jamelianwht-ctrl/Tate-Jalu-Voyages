@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOUNGE.SHOP - Responsive E-Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="unified_style.css">
+</head>
+<body>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+
+    <!-- Integrated Master Layout Wrapper -->
+    <div class="container">
+        <header>
+            <div class="title">
+                <a href="#" id="homeLink">Popular Events</a>
+            </div>
+        </header>
+        <h2 class="page-subtitle">Durban Events</h2>
+
+        <!-- Dynamic Target Core View Mount -->
+        <div id="contentTab"></div>
+    </div>
+
+    <!-- Hidden Persistent Interactive Checkout Sidebar Frame -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+    <script>
+        // Centralized Product Catalog Storage Registry
+        const products = [
+            {
+                id: 5,
+                name: "RUN FOR CHARITY 2ND Ostomy Charity fun walk",
+                location: "Ushaka Marine World, 1 King Shaka Ave, Durban",
+                price: 200,
+                description: "Join us for the RUN FOR CHARITY to support Foundation on 2026-07-05 at 08:00. Whether you run, jog or walk, every step you take will directly fund their mission. Lace up your shoes, bring your friends, and be part of something bigger.",
+                image: "images/dbn1.png"
+            },
+            {
+                id: 6,
+                name: "DURBAN CITY FC VS AmaZulu FC",
+                location: "Chatsworth Stadium, 97 Camillus Avenue Chatsworth, Durban",
+                price: 50,
+                description: "Experience the excitement of a local soccer game event on 2026-07-07 at 18:30. Cheer alongside passionate fans, enjoy fast-paced action, and witness local talent compete in an energetic atmosphere filled with teamwork, entertainment, and unforgettable moments for all ages.",
+                image: "images/dbn2.png"
+            },
+            {
+                id: 7,
+                name: "Sip & Paint by MODERNISM - Fortunes Cafe Morningside",
+                location: "Fortunes Cafe Morningside, 1st Floor, 1 Morningside Rd, Durban",
+                price: 360,
+                description: "Unwind and get creative at a fun Sip and Paint event on 2026-07-09 at 17:00 where art meets relaxation. Enjoy your favorite drinks while following a guided painting session in a lively, social atmosphere perfect for friends, date nights, or anyone looking to express their creativity and have a memorable evening.",
+                image: "images/dbn3.png"
+            },
+            {
+                id: 8,
+                name: "Syakuzwa Gqom Festival",
+                location: "Durban Exhibition Centre, Walnut Road, Durban Central, Durban.",
+                price: 250,
+                description: "Feel the energy of a vibrant Gqom Music Festival on 2026-10-11 at 20:30 where powerful beats, electrifying performances, and nonstop dancing create an unforgettable experience. Celebrate the sound and culture of Durban’s iconic music scene with top DJs, live entertainment, and an atmosphere full of rhythm, excitement, and pure nightlife energy.",
+                image: "images/dbn4.png"
+            }
+        ];
+        window.products = products;
+    </script>
+    <script src="unified_script.js"></script>
+    <footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

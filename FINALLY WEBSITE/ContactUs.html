@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tate Jalu Voyages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="unified_style.css">
+    <style>
+
+        /* Two-column layout grid inside the format framework */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .contact-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a252f;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-block {
+            margin-bottom: 20px;
+        }
+
+        .info-block p {
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Interactive feedback form framework built to match site styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #7f8c8d;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 10px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #1a252f;
+        }
+
+        .submit-btn {
+            padding: 12px 20px;
+            background-color: #1a252f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--gold-btn);
+            transform: translateY(-1px);
+        }
+
+        .contact-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f2f6;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #1a252f;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            border-radius: 25px;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: var(--gold-btn);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+            </a>
+            <a href="index.html">Home</a>
+            <a href="ExplorePage.html">Explore</a>
+            <a href="All Resorts.html">Resorts</a>
+            <a href="All events.html">Events</a>
+            <a href="TJ_ Partnerships.html">Partnerships</a>
+            <a href="SignUP&Login.html">SignUp&Login</a>
+            <a href="#" class="nav-cart" aria-label="Shopping cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+                </svg>
+                <span class="totalQuantity">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="policy-container">
+        
+        <div class="policy-header">
+            <h1>Contact Us</h1>
+            <p class="policy-subtitle">We are here to support your journey</p>
+        </div>
+
+        <div class="policy-grid">
+            
+            <div class="policy-section">
+                <h2>Get in Touch</h2>
+                <p>Have questions about flight planning, current partnerships, or resort checkout assistance? Our operations group is here to help.</p>
+                
+                <div class="info-block">
+                    <p><strong>Corporate Office:</strong></p>
+                    <p>TATE JALU VOYAGES</p>
+                    <p>16 Peter Mokaba Ridge</p>
+                    <p>Durban</p>
+                </div>
+
+                <div class="info-block">
+                    <p><strong>Electronic Enquiries:</strong></p>
+                    <p>support@tjvoyages.com</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>Send a Message</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="userName">Full Name</label>
+                        <input type="text" id="userName" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email Address</label>
+                        <input type="email" id="userEmail" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="userMessage">Message</label>
+                        <textarea id="userMessage" rows="4" required placeholder="How can we assist your takeoff..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="policy-footer">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

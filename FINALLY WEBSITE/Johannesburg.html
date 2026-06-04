@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOUNGE.SHOP - Responsive E-Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="unified_style.css">
+</head>
+<body>
+
+   <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+
+    <!-- Integrated Master Layout Wrapper -->
+    <div class="container">
+        <header>
+            <div class="title">
+                <a href="#" id="homeLink">Popular Events</a>
+            </div>
+        </header>
+        <h2 class="page-subtitle">Johannesburg Events</h2>
+
+        <!-- Dynamic Target Core View Mount -->
+        <div id="contentTab"></div>
+    </div>
+
+    <!-- Hidden Persistent Interactive Checkout Sidebar Frame -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+    <script>
+        // Centralized Product Catalog Storage Registry
+        const products = [
+            {
+                 id: 1,
+                name: "The Johannesburg Zoo",
+                location: "Johannesburg Zoo, CNR Jan Smuts Ave & Upper Park Dr, Parkview, Johannesburg",
+                price: 50,
+                description: "Explore the wonders of the Johannesburg Zoo, a family-friendly destination home to a wide variety of wildlife from around the world. Event time: 2026-07-15 10:00. Enjoy scenic walkways, educational exhibits, and exciting animal encounters in a fun and relaxing environment perfect for visitors of all ages.",
+                image: "images/jo1.png"
+            },
+            {
+                id: 2,
+                name: "Sun Eagle Adventures - Maropeng",
+                location: "Sun Eagle Adventures, Maropeng",
+                price: 50,
+                description: "Take on the thrill of a 4-wheel adventure trail where rugged terrain, muddy tracks, and scenic landscapes combine for an adrenaline-filled outdoor experience. Event time: 2026-07-16 11:30. Perfect for adventure seekers, this exciting ride offers powerful off-road action, breathtaking views, and unforgettable moments across challenging trails.",
+                image: "images/jo2.png"
+            },
+            {
+                id: 3,
+                name: "Wits Sterkfontein Caves",
+                location: "Sterkfonten Caves, kromdraai Rd, Johannesburg",
+                price: 100,
+                description: "Discover the hidden beauty of a cave tour as you journey through fascinating underground passages filled with stunning rock formations and natural wonders. Event time: 2026-07-17 14:00. Guided by experienced experts, this adventure offers a unique blend of exploration, history, and breathtaking scenery for an unforgettable experience beneath the surface.",
+                image: "images/jo3.png"
+            },
+            {
+                 id: 4,
+                name: "Kingsmead Book Fair 2026",
+                location: "Kingsmead College Campus, Johannesburg",
+                price: 90,
+                description: "Step into a world of stories and creativity at a lively bookstore festival celebrating books, authors, and reading culture. Event time: 2026-07-18 09:45. Enjoy book launches, live readings, interactive activities, and a welcoming atmosphere where book lovers of all ages can discover new favorites and connect through the joy of literature.",
+                image: "images/jo4.png"
+            }
+        ];
+        window.products = products;
+    </script>
+    <script src="unified_script.js"></script>
+    <footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

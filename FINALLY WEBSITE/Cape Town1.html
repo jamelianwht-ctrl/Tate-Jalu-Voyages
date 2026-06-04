@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cape Town — Airbnb</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="unified_style.css"/>
+</head>
+<body>
+
+   <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="ExplorePage.html">Explore</a>
+        <a href="All Resorts.html">Resorts</a>
+        <a href="All events.html">Events</a>
+        <a href="TJ_ Partnerships.html">Partnerships</a>
+        <a href="SignUP&Login.html">SignUp&Login</a>
+        <a href="#" class="nav-cart" aria-label="Shopping cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+            <span class="totalQuantity">0</span>
+        </a>
+    </div>
+</nav>
+<!-- HERO -->
+<div class="hero">
+  <h1>Cape Town</h1>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="f-btn active" data-filter="all" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    All
+  </button>
+  <button class="f-btn" data-filter="beachfront" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M2 20h20M3 17s1-6 9-6 9 6 9 6"/><circle cx="12" cy="7" r="3"/></svg>
+    Beachfront
+  </button>
+  <button class="f-btn" data-filter="pools" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><path d="M2 12h20M2 17c2-2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M6 7l3-3 3 3"/></svg>
+    Pools
+  </button>
+  <button class="f-btn" data-filter="luxury" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Luxury
+  </button>
+  <button class="f-btn" data-filter="apartments" onclick="setFilter(this)">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+    Apartments
+  </button>
+  
+  
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap">
+  <div class="cards-grid" id="cards-grid"></div>
+</div>
+
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+
+
+<script>
+const listings = [
+  {
+    id: 9,
+    type: "Apartment in Table View",
+    name: "Beachfront bliss, sunsets galore",
+    detail: "2 bedroom · 2 queen bed · 2 bath",
+    priceVal: 4069,
+    nights: 2,
+    rating: "4.85",
+    reviews: 512,
+    badge: true,
+    tags: ["beachfront","luxury"],
+    url: "https://www.airbnb.co.za/rooms/1330388497811021039?check_in=2026-06-19&check_out=2026-06-21&photo_id=2295936347&source_impression_id=p3_1779363428_P3lEy7CN6JRJZ7uv&previous_page_section_name=1000",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMzMDM4ODQ5NzgxMTAyMTAzOQ==/original/5f771a84-d344-4919-9b66-d4e56c7919a7.jpeg?im_w=960",
+      "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=700&q=80",
+      "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?w=700&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700&q=80"
+    ]
+  },
+  {
+    id: 10,
+    type: "Entire home in Cape Town",
+    name: "180° Exclusive Coastal Splendor",
+    detail: "3 bedroom · 3 bed · 2 bath",
+    priceVal: 5638,
+    nights: 2,
+    rating: "4.95",
+    reviews: 318,
+    badge: true,
+    tags: ["beachfront","pools","luxury"],
+    url: "https://www.airbnb.co.za/rooms/1359926367168831212?check_in=2026-06-19&check_out=2026-06-21&photo_id=2092269205&source_impression_id=p3_1779363428_P3pFbLWVV49z_9yh&previous_page_section_name=1000",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-1359926367168831212/original/118fdf70-42f0-4163-9bd4-9c3920f14621.jpeg?im_w=960",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80"
+    ]
+  },
+  {
+    id: 11,
+    type: "Entire rental unit in Cape Town",
+    name: "Ferndale court",
+    detail: "2 bedrooms · 2 beds · 1 bath",
+    priceVal: 5444,
+    nights: 2,
+    rating: "4.93",
+    reviews: 212,
+    badge: true,
+    tags: ["apartments","beachfront"],
+    url: "https://www.airbnb.co.za/rooms/1304122960137378523?check_in=2026-06-12&check_out=2026-06-14&photo_id=2042136392&source_impression_id=p3_1779363428_P3X67hx3mBiYRyKs&previous_page_section_name=1000",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1304122960137378523/original/30019681-e96b-40d3-a659-5e26a3a708ae.jpeg?im_w=960",
+      "https://images.unsplash.com/photo-1506974210756-8e1b8985d348?w=700&q=80",
+      "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=700&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80",
+      "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=700&q=80"
+    ]
+  },
+  {
+    id: 12,
+    type: "Apartment in Cape Town",
+    name: "Ferndale court",
+    detail: "3 bedrooms · 3 beds · 2 baths",
+    priceVal: 5444,
+    nights: 2,
+    rating: "4.9",
+    reviews: 108,
+    badge: true,
+    tags: ["luxury","pools"],
+    url: "https://www.airbnb.co.za/rooms/1304122960137378523?check_in=2026-06-10&check_out=2026-06-12&search_mode=regular_search&source_impression_id=p3_1779369755_P3IvSMg4dxsQX01v&previous_page_section_name=1000&federated_search_id=1b949b74-97cf-42e0-903d-82492d0b41be",
+    imgs: [
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1304122960137378523/original/a820f9e8-a325-4ca8-be21-94347afd7af8.jpeg?im_w=960",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
+      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=700&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700&q=80"
+    ]
+  }
+];
+window.listings = listings;
+</script>
+<script src="unified_script.js"></script>
+<footer class="global-site-footer-wrap">
+    <div class="footer-inner-content">
+        <p class="footer-copyright-text">&copy; 2026 TATE JALU VOYAGES. All rights reserved.</p>
+        <div class="footer-links-navigation">
+            <br>
+            <a href="PrivacyPolicy.html" class="footer-redirect-link">Privacy Policy</a>
+            <a href="AboutUs.html" class="footer-redirect-link">About Us</a>
+            <a href="ContactUs.html" class="footer-redirect-link">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="unified_style.css">
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.jpg" alt="Tate Jalu Voyages logo">
+            </a>
+            <a href="index.html">Home</a>
+            <a href="ExplorePage.html">Explore</a>
+            <a href="All Resorts.html">Resorts</a>
+            <a href="All events.html">Events</a>
+            <a href="TJ_ Partnerships.html">Partnerships</a>
+            <a href="SignUP&Login.html">SignUp&Login</a>
+            <a href="#" class="nav-cart" aria-label="Shopping cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"/>
+                </svg>
+                <span class="totalQuantity">0</span>
+            </a>
+        </div>
+    </nav>
+
+
+  <div class="main-container">
+    <button type="button" id="accountCloseBtn" class="account-close" aria-label="Close account info">×</button>
+    <h1 class="account-title">Account Info</h1>
+    <form action="/action_page.php">
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+      </div>
+      <div class="form-row">
+        <label for="pwd">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="pwd" name="pwd" placeholder="Enter your password">
+          <button type="button" id="pwdToggle" class="pwd-toggle" aria-label="Toggle password visibility">
+            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" class="secondary" onclick="location.href='index.html'">Log In</button>
+        <button type="button" class="secondary" onclick="location.href='index.html'">Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="unified_script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const closeBtn = document.getElementById('accountCloseBtn');
+      const defaultReturn = 'index.html';
+      let returnPage = sessionStorage.getItem('accountReturnPage') || '';
+      if (!returnPage && document.referrer) {
+        const refPage = document.referrer.split('/').pop();
+        returnPage = refPage || defaultReturn;
+      }
+      if (!returnPage) {
+        returnPage = defaultReturn;
+      }
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          window.location.href = returnPage;
+        });
+      }
+
+      const pwdInput = document.getElementById('pwd');
+      const pwdToggle = document.getElementById('pwdToggle');
+      if (pwdToggle && pwdInput) {
+        pwdToggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          const isPassword = pwdInput.type === 'password';
+          pwdInput.type = isPassword ? 'text' : 'password';
+          pwdToggle.classList.toggle('revealed', !isPassword);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
